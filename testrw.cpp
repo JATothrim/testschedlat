@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
     //std::this_thread::sleep_for(std::chrono::milliseconds(10));
     
     // second method of waiting is busy spinning to see if
-    // scheduler thinks differently of CPU running at 100%.
+    // scheduler works differently for CPU running at 100%.
     ticks spin = ticks(bogomips / maxcpus) * 1000;  // ~10s
     while(spin > 0) {
       asm volatile("nop");
